@@ -1,0 +1,11 @@
+<form action='/users/<%=@edit.id%>' method='POST'>
+  <input type="hidden" name="_method" value="patch">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>First Name: <input type="text" name="first_name" value='<%= @edit.first_name %>'></p>
+  <p>Last Name: <input type="text" name="last_name" value='<%= @edit.last_name %>'></p>
+  <p>Email Address: <input type="text" name="email_address" value='<%= @edit.email_address %>'></p>
+  <p>Password: <input type="text" name="password" value='<%= @edit.password %>'></p>
+  <input  type="submit" value="Update">
+</form>
+<a href="/users/<%= @edit.id%>">Show</a>
+<a href="/users/index">Back</a>

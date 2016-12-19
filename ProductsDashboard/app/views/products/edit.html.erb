@@ -1,0 +1,10 @@
+<form action='/products/<%=@edit.id%>' method='POST'>
+  <input type="hidden" name="_method" value="patch">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>Name: <input type="text" name="name" value='<%= @edit.name %>'></p>
+  <p>Description: <input type="text" name="description" value='<%= @edit.description %>'></p>
+  <p>Price: <input type="text" name="price" value='<%= @edit.price %>'></p>
+  <input  type="submit" value="Update">
+</form>
+<a href="/products/<%= @edit.id%>">Show</a>
+<a href="/products/index">Back</a>

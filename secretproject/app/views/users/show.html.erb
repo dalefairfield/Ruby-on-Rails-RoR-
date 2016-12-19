@@ -1,0 +1,27 @@
+<a href="/users/<%=@show.id%>/edit">Edit Profile</a>
+<p> Hello <%=@show.name%></p>
+
+<%=flash[:message]%>
+<form action='/secrets/index' method='post'>
+  <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+  <p>New Secret</p>
+  <input type='text' name='content'>
+  <input type='submit' value='Create Secret'>
+</form>
+
+<table>
+  <tr>
+    <th> Secrets </th>
+  </tr>
+  <%@secret.each do |x|%>
+    <tr>
+      <td><%=x.content%>
+        <form action='/secrets/delete/<%=x.id%>' method='post'>
+          <input type="hidden" name="_method" value="delete">
+          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+          <button type="submit" >Delete Secret</button>
+        </form>
+      </td>
+    </tr>
+  <%end%>
+</table>

@@ -1,0 +1,18 @@
+<a href="/bright_ideas/index">Back to Bright Ideas</a>
+<p><%=@show.user.alias%> thinks <%=@show.content%></p>
+
+people that liked the idea
+<table>
+  <tr>
+    <th> Alias </th>
+    <th> User </th>
+  </tr>
+  <%@like.each do |x|%>
+  <tr>
+
+      <td><a href="/users/<%=x.user_id%>"><%=x.user.alias%></a></td>
+      <td><%=x.user.name%></td>
+
+  </tr>
+  <%end%>
+</table>

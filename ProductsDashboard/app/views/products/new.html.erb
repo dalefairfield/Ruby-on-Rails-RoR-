@@ -1,0 +1,8 @@
+<form action='/products/new' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>Name: <input type="text" name="name"></p>
+  <p>Description: <input type="text" name="description"></p>
+  <p>Price: <input type="text" name="price"></p>
+  <input  type="submit" value="Create">
+</form> 
+<a href="/products/index">Back</a>

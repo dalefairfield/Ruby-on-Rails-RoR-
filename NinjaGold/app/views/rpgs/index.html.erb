@@ -1,0 +1,37 @@
+
+<p>Your gold: <%=session[:total]%>
+<form action='/rpgs/process' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>Farm (earns 10-20 gold)</p>
+  <input type="hidden" name="building" value="farm" />
+  <input class="submit" type="submit" name="Find Gold!">
+</form>
+
+<form action='/rpgs/process' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>Cave (earns 5-10 gold)</p>
+  <input type="hidden" name="building" value="cave" />
+  <input class="submit" type="submit" name="Find Gold!">
+</form>
+
+<form action='/rpgs/process' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>House (earns 2-5 gold)</p>
+  <input type="hidden" name="building" value="house" />
+  <input class="submit" type="submit" name="Find Gold!">
+</form>
+
+<form action='/rpgs/process' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>Casino (earns/takes 0-50 gold)</p>
+  <input type="hidden" name="building" value="casino" />
+  <input class="submit" type="submit" name="Find Gold!">
+</form>
+
+<h3>Activities</h3>
+<% if @activities %>​
+				<!-- Show the messages by reverse to see the latest activity -->
+				<% @activities.reverse.each do |element| %>​
+        
+				<% end %>​
+			<% end %>​

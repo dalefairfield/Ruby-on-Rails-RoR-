@@ -1,0 +1,19 @@
+
+<h4>I am thinking of a number between 1 and 100. Take a Guess!</h4>
+<h2><%=flash[:message]%></h2>
+<%if @hide_div==true%>
+<form action='/' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type='text' name='guess'>
+  <input class="submit" type="submit">
+</form>
+<%end%>
+<!-- <h2><%=session[:number]%></h2> -->
+
+<!-- <%if @hide_div==false%>
+<form action='/' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="action" value="reset">
+  <input class="submit" type="submit">
+</form>
+<%end%> -->

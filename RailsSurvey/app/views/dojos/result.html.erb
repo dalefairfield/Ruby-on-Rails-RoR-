@@ -1,0 +1,14 @@
+<h1>Dojos#result</h1>
+<p>Find me in app/views/dojos/result.html.erb</p>
+
+<p><%= flash[:message] %><p>
+
+<p>Name: <%= session[:name] %><p>
+<p>Dojo Location: <%= session[:location] %><p>
+<p>Favorite Language: <%= session[:language] %><p>
+<p>Comment: <%= session[:message] %><p>
+
+<form action='/' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input class="submit" type="submit">
+</form>

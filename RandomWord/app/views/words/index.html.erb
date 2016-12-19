@@ -1,0 +1,6 @@
+<h2><%=flash[:message]%></h2>
+<h4><%=@word%></h4>
+<form action='/words/index' method='POST'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input class="submit" type="submit">
+</form>
